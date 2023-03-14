@@ -36,4 +36,4 @@ for i in range(1, count_wm):
     if wm < min_wm:
         min_wm = wm
         min_wm_i = i
-print(f"самый тяжелый арбуз, весом {max_wm} кг., лежит {max_wm_i}-м, а самый лёгкий, весом {min_wm} кг., лежит {min_wm_i}-м")
+print(f"самый тяжелый арбуз, весом {max_wm} кг., лежит {max_wm_i+1}-м, а самый лёгкий, весом {min_wm} кг., лежит {min_wm_i+1}-м")
