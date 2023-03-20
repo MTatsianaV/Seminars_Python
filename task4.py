@@ -8,7 +8,7 @@
 60 -> 10 40 10'''
 
 allBirds = int(input("Введите итоговое количество журавликов: "))
-if allBirds < 6 or allBirds % 2 > 0:
+if allBirds < 6 or allBirds % 6 > 0:
     print("Эта задача не имеет решения! Пересчитайте журавликов!")
 else:
     res = int(allBirds / 6)
