@@ -31,9 +31,7 @@ def search_row(matrix, search_info):
 
 def delete_line(matrix, row_nums):
     with open(file_phones, 'w+', encoding='utf-8') as f:
-
         del matrix[row_nums]
-        i = 0
         for row in matrix:
             f.write(" ".join(str(element) for element in row))
             f.write("\n")
@@ -50,14 +48,13 @@ def change_info(matrix, row_nums):
                 exit()
         column_new_info = input("Введите новое значение: ")
         matrix[row_nums][change_column] = column_new_info
-        print(matrix)
         for row in matrix:
             f.write(" ".join(str(element) for element in row))
             f.write("\n")
         
 def making_changes():
     print_info()
-    table_fones = create_mass()
+    table_phones = create_mass()
     view_changes = int(input(
         "Выберите вид изменений (удалить строку - 1, добавить строку - 2, внести изменения - 3): "))
     if (view_changes == 1):
@@ -65,14 +62,14 @@ def making_changes():
         "Как будем искать строку (по номеру строки - 1, по содержимому - 2): "))
         if (view_seart == 1):
             row_num = int(input("Введите номер строки для удаления: ")) - 1
-            if (0 <= row_num < len(table_fones)):
-                delete_line(table_fones, row_num)
+            if (0 <= row_num < len(table_phones)):
+                delete_line(table_phones, row_num)
             else: print("Такой строки нет!")
         if (view_seart == 2):
             information_sought = input("Введите информацию для поиска: ")
-            row_num = search_row(table_fones, information_sought)
+            row_num = search_row(table_phones, information_sought)
             if (type(row_num) == int):
-                delete_line(table_fones, row_num)
+                delete_line(table_phones, row_num)
             else: exit()        
     if (view_changes == 2): 
         add_line()       
@@ -80,13 +77,13 @@ def making_changes():
         view_seart = int(input("Выберите тип поиска строки для внесения изменений (по номеру строки - 1, по содержимому - 2): "))
         if (view_seart == 1):
             row_num = int(input("Введите номер строки для внесения изменений: ")) - 1
-            change_info(table_fones, row_num)
+            change_info(table_phones, row_num)
         if (view_seart == 2):
             information_sought = input("Введите информацию для поиска: ")
-            row_num = search_row(table_fones, information_sought)
+            row_num = search_row(table_phones, information_sought)
             print(row_num)
-            if (0 <= row_num < len(table_fones)): 
-                change_info(table_fones, row_num)
+            if (0 <= row_num < len(table_phones)): 
+                change_info(table_phones, row_num)
             else: print("Таких данных нет!")        
 
 file_phones = r'files_txt\telephonebook.txt'
