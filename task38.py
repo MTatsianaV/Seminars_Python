@@ -12,11 +12,10 @@ def create_mass():
     with open(file_phones, 'r', encoding='utf-8') as f:
         lines = f.readlines()
         table = []
-        count = 1
         for line in lines:
             line = line.rstrip("\n")
             row = line.split(" ")
-            new_row = [row[0], row[1], row[2], int(row[3])]
+            new_row = [row[0], row[1], row[2], (row[3])]
             table.append(new_row)
     return (table)
 
