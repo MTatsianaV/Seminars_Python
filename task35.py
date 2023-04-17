@@ -14,5 +14,14 @@ def is_prime(n, div=2):
         return False    
     return is_prime(n, div+1)       # Рекурсивно проверяем следующий делитель
 
+''' def is_prime2(n):               # Эта функция на работает (123, 125 показывает не верно)
+    for i in range(2,n):
+        if n%i == 0:
+            return False
+        else:
+            return True '''
+        
+
 number = int(input("Введите число: "))
 print(is_prime(number))
+''' print(is_prime2(number)) '''
